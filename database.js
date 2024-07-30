@@ -23,5 +23,36 @@ export async function getRecipe(id) {
     return result[0]
 }
 
+export async function createRecipe(name, ingredients, instructions, cuisine) {
+    const [result] = await pool.execute(`
+        INSERT INTO recipes (name, ingredients, instructions, cuisine)
+        VALUES (?, ?, ?, ?)`, [name, ingredients, instructions, cuisine])
+    const id = result.insertId
+    return getRecipe(id)
+}
+
+export async function updateRecipe(name, ingredients, instructions, cuisine) {
+    const query = `UPDATE recipes
+                    SET name = ?, ingredients = ?, instructions = ?, cuisine = ?
+                    WHERE id = ?`
+    try {
+        await pool.execute(query, [name, ingredients, instructions, cuisine])
+        console.log(`Recipe with id ${id} updated!`)
+        return
+    }   catch (err) {
+        console.error('Error executing this UPDATE query:', err)
+    }
+}
+
+export async function deleteRecipe(id) {
+    try {
+        await pool.execute('DELETE FROM recipes WHERE id = ?', [id])
+        console.log(`Recipe with id ${id} deleted`)
+        return
+    }   catch (err) {
+        console.error('Error executing this DELETE query:', err)
+    }
+}
+
 const recipe = await getRecipe(1);
 console.log(recipe)
