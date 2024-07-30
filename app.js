@@ -10,6 +10,12 @@ app.get("/recipes", async (req, res) => {
     res.render("recipes.ejs", { recipes })
 })
 
+app.get("/recipes/:id", async (req, res) => {
+    const id = req.params.id
+    const recipe = await getRecipe(id)
+    res.render("singleRecipe.ejs", { recipe })
+})
+
 
 
 // Error Logging
