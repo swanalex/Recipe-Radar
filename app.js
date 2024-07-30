@@ -20,6 +20,12 @@ app.get("/recipes/:id", async (req, res) => {
     res.render("singleRecipe.ejs", { recipe })
 })
 
+app.post("/recipes", async (req, res) => {
+    const { name, ingredients, instructions, cuisine } = req.body
+    const newRecipe = await createRecipe(name, ingredients, instructions, cuisine)
+    res.send(newRecipe)
+})
+
 
 
 // Error Logging
