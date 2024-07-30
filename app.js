@@ -17,8 +17,10 @@ app.get("/recipes/createRecipe", async (req, res) => {
     res.render("createRecipe.ejs")
 })
 
-app.get("/recipes/updateRecipe", async (req, res) => {
-    res.render("updateRecipe.ejs")
+app.get("/recipes/:id/updateRecipe", async (req, res) => {
+    const id = req.params.id
+    const recipe = await getRecipe(id)
+    res.render("updateRecipe.ejs", { recipe })
 })
 
 app.get("/recipes/:id", async (req, res) => {
