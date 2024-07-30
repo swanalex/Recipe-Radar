@@ -10,3 +10,18 @@ const pool = mysql.createPool({
     database: process.env.MYSQL_DATABASE
 }).promise()
 
+
+export async function getRecipes() {
+    const [result] = await pool.query('SELECT * FROM recipes')
+    return result
+}
+
+export async function getRecipe(id) {
+    const [result] = await pool.execute(`
+        SELECT * FROM recipes
+        WHERE id = ?`, [id])
+    return result[0]
+}
+
+const recipe = await getRecipe(1);
+console.log(recipe)
