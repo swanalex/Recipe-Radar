@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Update Recipe Page</title>
+</head>
+<body>
+
+    <h1>Update this recipe below:</h1>
+
+    <form onsubmit="updateRecipe(event, <%= recipe.id %>)">
+        <label>Name:</label>
+        <input type="text" name="updated_Name" required>
+
+        <label>Ingredients:</label>
+        <textarea name="updated_Ingredients" cols="30" rows="10"> <%= recipe.ingredients %></textarea>
+
+        <label>Instructions:</label>
+        <textarea name="updated_Instructions" cols="30" rows="10"> <%= recipe.instructions %> </textarea>
+
+        <label>Cuisine:</label>
+        <input type="text" name="updated_Cuisine">
+
+        <button type="submit" id="update_Button">Click here to update this recipe!</button>
+    </form>
+    
+</body>
+</html>
