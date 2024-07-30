@@ -38,6 +38,23 @@ app.post("/recipes", async (req, res) => {
     res.redirect("/recipes")
 })
 
+app.put("/recipes/:id/updateRecipe", async (req, res) => {
+    const id = parseInt(req.params.id, 10)
+    const { updated_Name, updated_Ingredients, updated_Instructions, updated_Cuisine } = req.body
+
+    try {
+        await updateRecipe(updated_Name, updated_Ingredients, updated_Instructions, updated_Cuisine)
+        return res.status(200).json({
+            message: "we have updated this recipe, hoorah!"
+        })
+    }   catch (err) {
+        console.error("Error, Error!", err)
+        res.status(500).json({
+            message: "An error occurred while updating this recipe, sir!"
+        })
+    }
+})
+
 
 
 // Error Logging
