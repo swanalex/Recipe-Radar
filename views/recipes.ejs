@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>My Recipes</title>
+</head>
+<body>
+
+    <h1>List of Current Recipes</h1>
+
+    <ul>
+        <% recipes.forEach(recipe => { %>
+            <li>
+                <h3><%= recipe.name %></h3>
+                <p><%= recipe.instructions.substring(0, 100) %>...</p>
+            </li>
+        <% }) %>
+    </ul>
+    
+</body>
+</html>
