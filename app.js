@@ -40,10 +40,10 @@ app.post("/recipes", async (req, res) => {
 
 app.put("/recipes/:id/updateRecipe", async (req, res) => {
     const id = parseInt(req.params.id, 10)
-    const { updated_Name, updated_Ingredients, updated_Instructions, updated_Cuisine } = req.body
+    const { name, ingredients, instructions, cuisine } = req.body
 
     try {
-        await updateRecipe(updated_Name, updated_Ingredients, updated_Instructions, updated_Cuisine)
+        await updateRecipe(name, ingredients, instructions, cuisine, id)
         return res.status(200).json({
             message: "we have updated this recipe, hoorah!"
         })

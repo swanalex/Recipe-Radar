@@ -31,12 +31,12 @@ export async function createRecipe(name, ingredients, instructions, cuisine) {
     return getRecipe(id)
 }
 
-export async function updateRecipe(name, ingredients, instructions, cuisine) {
+export async function updateRecipe(name, ingredients, instructions, cuisine, id) {
     const query = `UPDATE recipes
                     SET name = ?, ingredients = ?, instructions = ?, cuisine = ?
                     WHERE id = ?`
     try {
-        await pool.execute(query, [name, ingredients, instructions, cuisine])
+        await pool.execute(query, [name, ingredients, instructions, cuisine, id])
         console.log(`Recipe with id ${id} updated!`)
         return
     }   catch (err) {
