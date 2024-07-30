@@ -15,6 +15,7 @@
             <li>
                 <h3><%= recipe.name %></h3>
                 <p><%= recipe.instructions.substring(0, 100) %>...</p>
+                <a href="/recipes/<%= recipe.id %>">View This Recipe</a>
             </li>
         <% }) %>
     </ul>
