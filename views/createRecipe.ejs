@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Create New Recipe</title>
+</head>
+<body>
+
+    <h1>Add Your Recipe!</h1>
+
+    <form action="/recipes" method="POST">
+        <label for="recipeName">Name:</label>
+        <input type="text" id="recipeName" name="recipe_Name">
+
+        <label for="recipeIngredients">Ingredients:</label>
+        <textarea id="recipeIngredients" name="recipe_Ingredients" cols="30" rows="10"></textarea>
+
+        <label for="recipeInstructions">Cooking Instructions:</label>
+        <textarea id="recipeInstructions" name="recipe_Instructions" cols="30" rows="10"></textarea>
+
+        <button type="submit">Add this recipe to the list!</button>
+    </form>
+    
+</body>
+</html>
