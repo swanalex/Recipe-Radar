@@ -24,9 +24,11 @@ app.get("/recipes/:id", async (req, res) => {
 })
 
 app.post("/recipes", async (req, res) => {
-    console.log(req.body, 'this is the req body')
+    // Destructuring assignment to extract form data from req.body
     const { recipe_Name, recipe_Ingredients, recipe_Instructions, recipe_Cuisine } = req.body
+    // Using the extracted variables to create a new recipe
     await createRecipe(recipe_Name, recipe_Ingredients, recipe_Instructions, recipe_Cuisine)
+    // Redirecting to the recipes page after successful creation
     res.redirect("/recipes")
 })
 
