@@ -53,6 +53,3 @@ export async function deleteRecipe(id) {
         console.error('Error executing this DELETE query:', err)
     }
 }
-
-const recipe = await getRecipe(1);
-console.log(recipe)

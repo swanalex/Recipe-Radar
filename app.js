@@ -1,7 +1,10 @@
 import express from 'express'
-import { getRecipes, getRecipe, updateRecipe, deleteRecipe } from './database.js'
+import { getRecipes, getRecipe, createRecipe, updateRecipe, deleteRecipe } from './database.js'
 
 const app = express()
+
+app.set("view engine", "ejs")
+app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 // Routes
@@ -21,9 +24,10 @@ app.get("/recipes/:id", async (req, res) => {
 })
 
 app.post("/recipes", async (req, res) => {
-    const { name, ingredients, instructions, cuisine } = req.body
-    const newRecipe = await createRecipe(name, ingredients, instructions, cuisine)
-    res.send(newRecipe)
+    console.log(req.body, 'this is the req body')
+    const { recipe_Name, recipe_Ingredients, recipe_Instructions, recipe_Cuisine } = req.body
+    await createRecipe(recipe_Name, recipe_Ingredients, recipe_Instructions, recipe_Cuisine)
+    res.redirect("/recipes")
 })
 
 
