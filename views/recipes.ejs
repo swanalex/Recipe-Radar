@@ -4,23 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>My Recipes</title>
 </head>
 <body>
 
-    <h1>List of Current Recipes</h1>
+    <h1 id="recipe-list-title">List of Current Recipes</h1>
 
-    <ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Recipe Name</th>
+                <th>Cuisine</th>
+                <th>Recipe Preview</th>
+                <th>  </th>
+            </tr>
+        </thead>
         <% recipes.forEach(recipe => { %>
-            <li>
-                <h3><%= recipe.name %></h3>
-                <p><%= recipe.instructions.substring(0, 100) %>...</p>
-                <a href="/recipes/<%= recipe.id %>">View This Recipe</a>
-            </li>
-        <% }) %>
-    </ul>
 
-    <a href="http://localhost:5467/recipes/createRecipe">Click here to add a new recipe!</a>
+            <tbody>
+                <tr>
+                    <td><%= recipe.name %></td>
+                    <td><%= recipe.cuisine %></td>
+                    <td><%= recipe.instructions.substring(0, 100) %>...</td>
+                    <td>
+                        <i id="view-recipe-icon" class="fa-solid fa-magnifying-glass-plus" onclick="window.location.href='http://localhost:5467/recipes/<%= recipe.id %>'"></i>
+                        <p id="view-recipe-text" style="display: inline;">(View recipe)</p>
+                    </td>
+                </tr>
+            </tbody>
+                
+        <% }) %>
+    </table>    
+
+    <div id="add-recipe-div">
+        <p style="display: inline;">Click here to add a new recipe →</p>
+        <i id="add_recipe_button" class="fa-solid fa-circle-plus" onclick="window.location.href='http://localhost:5467/recipes/createRecipe'"></i>
+    </div>
     
 </body>
 </html>

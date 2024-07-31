@@ -2,3 +2,38 @@ ul {
     list-style: none;
     padding: 0;
 }
+
+i {
+    cursor: pointer;
+}
+
+
+
+
+* {
+    border: solid hotpink 1px;
+    padding: 5px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+}
+
+#recipe-list-items {
+    display: flex;
+}
+
+#view-recipe-icon {
+    align-self: center;
+}
+
+#icon-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe-list-title {
+    align-self: center;
+}
