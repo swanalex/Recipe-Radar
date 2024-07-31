@@ -9,7 +9,7 @@ async function updateRecipe(event, recipeId) {
     const cuisine = event.target.updated_Cuisine.value
 
     try {
-        const response = await fetch(`/recipes/${recipeId}/updateRecipe`, {
+        const response = await fetch(`/recipes/${recipeId}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',

@@ -38,7 +38,7 @@ app.post("/recipes", async (req, res) => {
     res.redirect("/recipes")
 })
 
-app.put("/recipes/:id/updateRecipe", async (req, res) => {
+app.put("/recipes/:id", async (req, res) => {
     const id = parseInt(req.params.id, 10)
     const { name, ingredients, instructions, cuisine } = req.body
 
@@ -54,6 +54,8 @@ app.put("/recipes/:id/updateRecipe", async (req, res) => {
         })
     }
 })
+
+// app.delete("/recipes/:id/delete", async (re))
 
 
 
