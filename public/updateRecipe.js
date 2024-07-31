@@ -20,9 +20,10 @@ async function updateRecipe(event, recipeId) {
         if (response.ok) {
             alert('Recipe updated successfully!')
             window.location.href = '/recipes'
-        } else {
+    }   else {
             alert('Failed to update this recipe!')
         }
+        
     }   catch (error) {
         console.error('Error updating this recipe: ', error)
         alert('An error occurred while updating this recipe')
