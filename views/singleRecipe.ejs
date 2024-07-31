@@ -18,6 +18,10 @@
         <p>Type of cuisine: <%= recipe.cuisine %> </p>
 
     <a href="http://localhost:5467/recipes/<%=recipe.id%>/updateRecipe">Click here to update this recipe!</a>
+
+    <button id="delete_button" onclick="deleteRecipe(<%= recipe.id %>)">Delete This Recipe!</button>
+
+    <script src="/deleteRecipe.js"></script>
     
 </body>
 </html>
