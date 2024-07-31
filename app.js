@@ -55,8 +55,8 @@ app.put("/recipes/:id", async (req, res) => {
     }
 })
 
-app.delete("/recipes/:id/delete", async (req, res) => {
-    const id = parstInt(req.params.id, 10)
+app.delete("/recipes/:id", async (req, res) => {
+    const id = parseInt(req.params.id, 10)
 
     try {
         await deleteRecipe(id)
