@@ -55,7 +55,21 @@ app.put("/recipes/:id", async (req, res) => {
     }
 })
 
-// app.delete("/recipes/:id/delete", async (re))
+app.delete("/recipes/:id/delete", async (req, res) => {
+    const id = parstInt(req.params.id, 10)
+
+    try {
+        await deleteRecipe(id)
+        return res.status(200).json({
+            message: "Recipe deletion successful!"
+        })
+    }   catch (err) {
+        console.error("There was an error deleting this recipe: ", err)
+        res.status(500).json({
+            message: "We've encountered an error while deleting this recipe"
+        })
+    }
+})
 
 
 
