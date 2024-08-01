@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Calistoga&family=Lobster&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Create New Recipe</title>
 </head>
 <body>
 
-    <h1>Add Your Recipe!</h1>
+    <h1 id="add-recipe-title">Add Your Recipe!</h1>
 
     <form action="/recipes" method="POST">
-        <label for="recipeName">Name:</label>
-        <input type="text" id="recipeName" name="recipe_Name">
+        <label class="add-recipe-label" for="recipeName">Name:</label>
+        <input type="text" id="recipeName" name="recipe_Name" required>
 
-        <label for="recipeIngredients">Ingredients:</label>
-        <textarea id="recipeIngredients" name="recipe_Ingredients" cols="30" rows="10"></textarea>
+        <label class="add-recipe-label" for="recipeIngredients">Ingredients:</label>
+        <textarea id="recipeIngredients" name="recipe_Ingredients" cols="30" rows="10" required></textarea>
 
-        <label for="recipeInstructions">Cooking Instructions:</label>
-        <textarea id="recipeInstructions" name="recipe_Instructions" cols="30" rows="10"></textarea>
+        <label class="add-recipe-label" for="recipeInstructions">Cooking Instructions:</label>
+        <textarea id="recipeInstructions" name="recipe_Instructions" cols="30" rows="10" required></textarea>
 
-        <label for="recipeCuisine">Type of Cuisine:</label>
-        <input type="text" id="recipeCuisine" name="recipe_Cuisine">
+        <label class="add-recipe-label" for="recipeCuisine">Type of Cuisine:</label>
+        <input type="text" id="recipeCuisine" name="recipe_Cuisine" required>
 
-        <button type="submit">Add this recipe to the list!</button>
+        <button id="add-recipe-button" type="submit">Add this recipe to the list!</button>
     </form>
     
 </body>

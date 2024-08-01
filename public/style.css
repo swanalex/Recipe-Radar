@@ -1,8 +1,11 @@
 * {
-    border: solid #5c6e58 1px;
+    /* border: solid #5c6e58 1px; */
+    border: solid hotpink 1px;
     padding: 5px;
     border-radius: 5px;
 }
+
+/* ELEMENT TAGS */
 
 body {
     display: flex;
@@ -32,13 +35,15 @@ i {
     cursor: pointer;
 }
 
-#recipe-list-title {
-    font-family: 'Bungee Inline';
+/* ID SELECTOR */
+
+#add-recipe-div {
+    align-self: center;
+    border: none;
 }
 
-#name-data-cell:hover {
-    background-color: tan;
-    transition: 0.4s;
+#add-recipe-text {
+    font-family: 'Lobster';
 }
 
 #cuisine-data-cell:hover {
@@ -50,9 +55,18 @@ i {
     border: none;
 }
 
+#name-data-cell:hover {
+    background-color: tan;
+    transition: 0.4s;
+}
+
 #preview-data-cell:hover {
     background-color: #f2d349;
     transition: 0.4s;
+}
+
+#view-recipe-data-cell {
+    cursor: auto;
 }
 
 #view-recipe-icon {
@@ -63,18 +77,38 @@ i {
     border: none;
 }
 
-#view-recipe-data-cell {
-    cursor: auto;
+#add-recipe-button,
+#delete_button,
+#update_Button {
+    background-color: #8aa899;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-#add-recipe-text {
-    font-family: 'Lobster';
+#add-recipe-button:hover,
+#delete_button:hover,
+#update_Button:hover {
+    background-color: #5c6e58;
+    transition: background-color 0.3s ease;
 }
 
-#add-recipe-div {
+#add-recipe-title, 
+#recipe-list-title {
+    font-family: 'Bungee Inline';
+}
+
+
+#icon-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe-list-title {
     align-self: center;
-    border: none;
 }
+
+/* CLASS SELECTOR */
 
 .icon-buttons {
     color: #5c6e58;
@@ -88,11 +122,49 @@ i {
     
 }
 
-#icon-div {
+
+
+
+
+
+
+form {
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
 }
 
-#recipe-list-title {
+.add-recipe-label,
+.update-recipe-label,
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form button {
     align-self: center;
+    width: 50%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: solid 1px #5c6e58;
+    border-radius: 5px;
+    font-family: 'Noto Sans';
+    font-size: 16px;
+}
+
+form input,
+form textarea {
+    background-color: wheat;
+}
+
+form label {
+    background-color: #f2d349;
+}
+
+form textarea {
+    resize: vertical; /* Allow vertical resizing */
 }

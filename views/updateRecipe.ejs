@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Calistoga&family=Lobster&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Update Recipe Page</title>
 </head>
 <body>
@@ -11,10 +14,10 @@
     <h1>Update this recipe below:</h1>
 
     <form onsubmit="updateRecipe(event, <%= recipe.id %>)">
-        <label>Name:</label>
+        <label class="update-recipe-label">Name:</label>
         <input type="text" name="updated_Name" value="<%= recipe.name %>" required>
 
-        <label>Ingredients:</label>
+        <label class="update-recipe-label">Ingredients:</label>
         <textarea name="updated_Ingredients" cols="30" rows="10" required> <%= recipe.ingredients %></textarea>
 
         <label>Instructions:</label>
