@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Calistoga&family=Lobster&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>My Recipes</title>
 </head>
 <body>
 
-    <h1 id="recipe-list-title">List of Current Recipes</h1>
+    <h1 id="recipe-list-title">Recipe Tracker</h1>
 
     <table>
         <thead>
@@ -25,10 +28,10 @@
             <tbody>
                 <tr>
                     <td><%= recipe.name %></td>
-                    <td><%= recipe.cuisine %></td>
+                    <td id="cuisine-data-cell"><p><%= recipe.cuisine %></p></td>
                     <td><%= recipe.instructions.substring(0, 100) %>...</td>
                     <td>
-                        <i id="view-recipe-icon" class="fa-solid fa-magnifying-glass-plus" onclick="window.location.href='http://localhost:5467/recipes/<%= recipe.id %>'"></i>
+                        <i id="view-recipe-icon" class="fa-solid fa-magnifying-glass-plus icon-buttons" onclick="window.location.href='http://localhost:5467/recipes/<%= recipe.id %>'"></i>
                         <p id="view-recipe-text" style="display: inline;">(View recipe)</p>
                     </td>
                 </tr>
@@ -38,8 +41,8 @@
     </table>    
 
     <div id="add-recipe-div">
-        <p style="display: inline;">Click here to add a new recipe →</p>
-        <i id="add_recipe_button" class="fa-solid fa-circle-plus" onclick="window.location.href='http://localhost:5467/recipes/createRecipe'"></i>
+        <p id="add-recipe-text" style="display: inline;">Click here to add a new recipe →</p>
+        <i id="add-recipe-button" class="fa-solid fa-circle-plus icon-buttons" onclick="window.location.href='http://localhost:5467/recipes/createRecipe'"></i>
     </div>
     
 </body>

@@ -13,6 +13,7 @@ i {
 * {
     border: solid hotpink 1px;
     padding: 5px;
+    border-radius: 5px;
 }
 
 body {
@@ -21,12 +22,42 @@ body {
     border: solid black 2px;
 }
 
-#recipe-list-items {
-    display: flex;
+th {
+    font-family: 'Calistoga';
+    background-color: #8aa899;
+    opacity: 0.6;
+}
+
+td {
+    font-family: 'Noto Sans';
+}
+
+#recipe-list-title {
+    font-family: 'Bungee Inline';
+}
+
+#cuisine-data-cell {
+    background-color: #8aa899;
 }
 
 #view-recipe-icon {
     align-self: center;
+}
+
+#add-recipe-text {
+    font-family: 'Lobster';
+}
+
+.icon-buttons {
+    color: #5c6e58;
+    background-color: #f2d349;
+}
+
+.icon-buttons:hover {
+    color: #f2d349;
+    background-color: #5c6e58;
+    transition: 0.5s;
+    
 }
 
 #icon-div {
