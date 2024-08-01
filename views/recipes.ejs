@@ -27,10 +27,10 @@
 
             <tbody>
                 <tr>
-                    <td><%= recipe.name %></td>
-                    <td id="cuisine-data-cell"><p><%= recipe.cuisine %></p></td>
-                    <td><%= recipe.instructions.substring(0, 100) %>...</td>
-                    <td>
+                    <td id="name-data-cell"><%= recipe.name %></td>
+                    <td id="cuisine-data-cell"><p id="cuisine-p-tag"><%= recipe.cuisine %></p></td>
+                    <td id="preview-data-cell"><%= recipe.instructions.substring(0, 100) %>...</td>
+                    <td id="view-recipe-data-cell">
                         <i id="view-recipe-icon" class="fa-solid fa-magnifying-glass-plus icon-buttons" onclick="window.location.href='http://localhost:5467/recipes/<%= recipe.id %>'"></i>
                         <p id="view-recipe-text" style="display: inline;">(View recipe)</p>
                     </td>

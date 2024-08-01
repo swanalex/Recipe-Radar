@@ -1,17 +1,5 @@
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-i {
-    cursor: pointer;
-}
-
-
-
-
 * {
-    border: solid hotpink 1px;
+    border: solid #5c6e58 1px;
     padding: 5px;
     border-radius: 5px;
 }
@@ -19,33 +7,73 @@ i {
 body {
     display: flex;
     flex-direction: column;
-    border: solid black 2px;
+    background-image: url('/images/background9.jpg');
+    background-position: center;
+    background-size: cover;
+    border: none;
+}
+
+h1 {
+    border: none;
 }
 
 th {
     font-family: 'Calistoga';
     background-color: #8aa899;
-    opacity: 0.6;
 }
 
 td {
     font-family: 'Noto Sans';
+    font-weight: bold;
+    cursor: none;
+}
+
+i {
+    cursor: pointer;
 }
 
 #recipe-list-title {
     font-family: 'Bungee Inline';
 }
 
-#cuisine-data-cell {
-    background-color: #8aa899;
+#name-data-cell:hover {
+    background-color: tan;
+    transition: 0.4s;
+}
+
+#cuisine-data-cell:hover {
+    background-color: #5c6e58;
+    transition: 0.4s;
+}
+
+#cuisine-p-tag {
+    border: none;
+}
+
+#preview-data-cell:hover {
+    background-color: #f2d349;
+    transition: 0.4s;
 }
 
 #view-recipe-icon {
     align-self: center;
 }
 
+#view-recipe-text {
+    border: none;
+}
+
+#view-recipe-data-cell {
+    cursor: auto;
+}
+
 #add-recipe-text {
     font-family: 'Lobster';
+}
+
+#add-recipe-div {
+    align-self: center;
+    border: none;
 }
 
 .icon-buttons {
