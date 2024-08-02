@@ -10,18 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Calistoga&family=Lobster&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Recipe Viewer</title>
 </head>
-<body>
-    <h1> <%= recipe.name %> </h1>
+<body id="single-recipe-body">
+    <h1 id="single-recipe-title"> <%= recipe.name %> </h1>
     
-        <h5>Ingredients:</h5>
-        <p> <%= recipe.ingredients %> </p>
-        <h5>Cooking Instructions:</h5>
-        <p> <%= recipe.instructions %> </p>
+        <h3 class="single-recipe-text">Ingredients:</h3>
+        <p class="single-recipe-text"> <%= recipe.ingredients %> </p>
+        <h3 class="single-recipe-text">Cooking Instructions:</h3>
+        <p class="single-recipe-text"> <%= recipe.instructions %> </p>
         <br>
-        <p>Type of cuisine: <%= recipe.cuisine %> </p>
+        <p class="single-recipe-text"><strong><u>Type of Cuisine:</u></strong> <%= recipe.cuisine %> </p>
 
-    <p style="display: inline;">Click here to edit this recipe →</p>
-    <i id="edit-recipe-icon" class="fa-solid fa-wrench" onclick="window.location.href='http://localhost:5467/recipes/<%=recipe.id%>/updateRecipe'"></i>
+    <div id="single-recipe-icon-div">
+        <p class="icon-pointer-text" style="display: inline;">Click here to edit this recipe →</p>
+        <i id="edit-recipe-icon" class="fa-solid fa-wrench icon-buttons" onclick="window.location.href='http://localhost:5467/recipes/<%=recipe.id%>/updateRecipe'"></i>
+    </div>
     <br><br>
 
     <button id="delete_button" onclick="deleteRecipe(<%= recipe.id %>)">Delete This Recipe!</button>

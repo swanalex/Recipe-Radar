@@ -1,6 +1,6 @@
 * {
-    /* border: solid #5c6e58 1px; */
-    border: solid hotpink 1px;
+    border: solid #5c6e58 1px;
+    /* border: solid hotpink 1px; */
     padding: 5px;
     border-radius: 5px;
 }
@@ -18,6 +18,7 @@ body {
 
 h1 {
     border: none;
+    font-family: 'Bungee Inline';
 }
 
 th {
@@ -42,17 +43,21 @@ i {
     border: none;
 }
 
-#add-recipe-text {
-    font-family: 'Lobster';
-}
-
 #cuisine-data-cell:hover {
     background-color: #5c6e58;
     transition: 0.4s;
 }
 
-#cuisine-p-tag {
+#cuisine-p-tag,
+#single-recipe-icon-div,
+p u,
+p strong {
     border: none;
+}
+
+#icon-div {
+    display: flex;
+    flex-direction: column;
 }
 
 #name-data-cell:hover {
@@ -63,6 +68,10 @@ i {
 #preview-data-cell:hover {
     background-color: #f2d349;
     transition: 0.4s;
+}
+
+#recipe-list-title {
+    align-self: center;
 }
 
 #view-recipe-data-cell {
@@ -93,42 +102,43 @@ i {
     transition: background-color 0.3s ease;
 }
 
-#add-recipe-title, 
-#recipe-list-title {
-    font-family: 'Bungee Inline';
-}
-
-
-#icon-div {
-    display: flex;
-    flex-direction: column;
-}
-
-#recipe-list-title {
-    align-self: center;
-}
 
 /* CLASS SELECTOR */
 
 .icon-buttons {
-    color: #5c6e58;
-    background-color: #f2d349;
+    /* color: #5c6e58;
+    background-color: #f2d349; */
+    color: #f2d349;
+    background-color: #5c6e58;
 }
 
 .icon-buttons:hover {
-    color: #f2d349;
-    background-color: #5c6e58;
+    /* color: #f2d349;
+    background-color: #5c6e58; */
+    color: #5c6e58;
+    background-color: #f2d349;
     transition: 0.5s;
     
 }
 
+.icon-pointer-text {
+    font-family: 'Calistoga';
+    background-color: #8aa899;
+}
+
+.single-recipe-text {
+    font-family: 'Noto Sans';
+    font-weight: bold;
+}
 
 
 
 
 
 
-form {
+
+form,
+body#single-recipe-body {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align items to the start (left) */
@@ -145,7 +155,9 @@ form label {
 
 form input,
 form textarea,
-form button {
+form button,
+p.single-recipe-text,
+button#delete_button {
     align-self: center;
     width: 50%;
     margin-bottom: 15px;
@@ -157,11 +169,13 @@ form button {
 }
 
 form input,
-form textarea {
+form textarea,
+p.single-recipe-text {
     background-color: wheat;
 }
 
-form label {
+form label,
+h3.single-recipe-text {
     background-color: #f2d349;
 }
 
