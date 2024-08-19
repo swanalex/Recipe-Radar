@@ -14,9 +14,9 @@
     <h1 id="single-recipe-title"> <%= recipe.name %> </h1>
     
         <h3 class="single-recipe-text">Ingredients:</h3>
-        <p class="single-recipe-text"> <%= recipe.ingredients %> </p>
+        <textarea readonly class="single-recipe-text" cols="30" rows="10"> <%= recipe.ingredients %> </textarea>
         <h3 class="single-recipe-text">Cooking Instructions:</h3>
-        <p class="single-recipe-text"> <%= recipe.instructions %> </p>
+        <textarea readonly class="single-recipe-text" cols="30" rows="10"> <%= recipe.instructions %> </textarea>
         <br>
         <p class="single-recipe-text"><strong><u>Type of Cuisine:</u></strong> <%= recipe.cuisine %> </p>
 

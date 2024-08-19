@@ -16,6 +16,11 @@ body {
     border: none;
 }
 
+html,
+form {
+    border: none;
+}
+
 h1 {
     border: none;
     font-family: 'Bungee Inline';
@@ -153,8 +158,8 @@ form label {
     font-weight: bold;
 }
 
+textarea,
 form input,
-form textarea,
 form button,
 p.single-recipe-text,
 button#delete_button {
@@ -170,7 +175,8 @@ button#delete_button {
 
 form input,
 form textarea,
-p.single-recipe-text {
+p.single-recipe-text,
+textarea.single-recipe-text {
     background-color: wheat;
 }
 
@@ -179,6 +185,6 @@ h3.single-recipe-text {
     background-color: #f2d349;
 }
 
-form textarea {
-    resize: vertical; /* Allow vertical resizing */
+textarea {
+    resize: vertical; /* Allow only vertical resizing */
 }
